@@ -45,9 +45,23 @@ namespace Mariani_ElaborazioneCSV
             writer.Close();
             reader.Close();
         }
+
+        private void Azione2() 
+        {
+            string s;
+            StreamReader reader = new StreamReader(fileName1);
+            s = reader.ReadLine();
+            int count = s.Split(';').Length;
+            MessageBox.Show("In un Record ci sono " + count + " Campi");
+        }
         private void azione1_Click(object sender, EventArgs e)
         {
             Azione1();
+        }
+
+        private void azione2_Click(object sender, EventArgs e)
+        {
+            Azione2();
         }
     }
 }
