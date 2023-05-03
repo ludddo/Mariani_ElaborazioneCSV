@@ -20,30 +20,34 @@ namespace Mariani_ElaborazioneCSV
 
         public string fileName1 = @"mariani1.csv";
         public string fileName2 = @"mariani.csv";
+        public Random r = new Random();
         private void Azione1() 
-        {
-
-        }
-        private void azione1_Click(object sender, EventArgs e)
         {
             string s;
             int i = 0;
-            StreamWriter writer = new StreamWriter(fileName1, append: true);
+            StreamWriter writer = new StreamWriter(fileName1, append: false);
             StreamReader reader = new StreamReader(fileName2);
             s = reader.ReadLine();
-            while (s != null) 
+            while (s != null)
             {
                 if (i == 0)
                 {
-                    writer.WriteLine(s + ";miovalore");
+                    writer.WriteLine(s + ";Valore Randomico;Campo Cancellazione Logica");
                 }
-
-
+                else
+                {
+                    int valore = r.Next(10, 21);
+                    writer.WriteLine(s + ";" + valore + ";false");
+                }
                 i++;
                 s = reader.ReadLine();
             }
-
-            
+            writer.Close();
+            reader.Close();
+        }
+        private void azione1_Click(object sender, EventArgs e)
+        {
+            Azione1();
         }
     }
 }
