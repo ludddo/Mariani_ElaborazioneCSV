@@ -53,6 +53,36 @@ namespace Mariani_ElaborazioneCSV
             s = reader.ReadLine();
             int count = s.Split(';').Length;
             MessageBox.Show("In un Record ci sono " + count + " Campi");
+            reader.Close();
+        }
+
+        private void Azione3()
+        {
+            // Implementare successivamente una funzione di scelta del file
+            string s = ".";
+            StreamReader reader = new StreamReader(fileName1);
+            int idk;
+            int i = 0;
+            int lunghezzaMax = 0;
+
+            // Bubble Sort
+
+            s = reader.ReadLine();
+            while (s != null)
+            {
+                idk = s.Length;
+                if (i != 0)
+                {
+                    if (lunghezzaMax < idk)
+                    {
+                        lunghezzaMax = s.Length;
+                    }
+                }
+                s = reader.ReadLine();
+                i++;
+            }
+
+            MessageBox.Show(lunghezzaMax.ToString());
         }
         private void azione1_Click(object sender, EventArgs e)
         {
@@ -62,6 +92,11 @@ namespace Mariani_ElaborazioneCSV
         private void azione2_Click(object sender, EventArgs e)
         {
             Azione2();
+        }
+
+        private void azione3_Click(object sender, EventArgs e)
+        {
+            Azione3();
         }
     }
 }
