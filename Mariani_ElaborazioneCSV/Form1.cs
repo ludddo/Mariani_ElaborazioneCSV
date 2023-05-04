@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -21,6 +20,7 @@ namespace Mariani_ElaborazioneCSV
         public string fileName1 = @"mariani1.csv";
         public string fileName2 = @"mariani.csv";
         public Random r = new Random();
+
         private void Azione1() 
         {
             string s;
@@ -46,34 +46,30 @@ namespace Mariani_ElaborazioneCSV
             reader.Close();
         }
 
-        private void Azione2() 
+        private int Azione2() 
         {
             string s;
+            int count = 0;
             StreamReader reader = new StreamReader(fileName1);
             s = reader.ReadLine();
-            int count = s.Split(';').Length;
-            MessageBox.Show("In un Record ci sono " + count + " Campi");
             reader.Close();
+            return count = s.Split(';').Length;
+            
         }
 
-        private void Azione3()
+        private int Azione3()
         {
-            // Implementare successivamente una funzione di scelta del file
-            string s = ".";
             StreamReader reader = new StreamReader(fileName1);
-            int idk;
-            int i = 0;
-            int lunghezzaMax = 0;
-
-            // Bubble Sort
+            int lunghezzaStringa = 0, lunghezzaMax = 0, i = 0;
+            string s;
 
             s = reader.ReadLine();
             while (s != null)
             {
-                idk = s.Length;
+                lunghezzaStringa = s.Length;
                 if (i != 0)
                 {
-                    if (lunghezzaMax < idk)
+                    if (lunghezzaMax < lunghezzaStringa)
                     {
                         lunghezzaMax = s.Length;
                     }
@@ -81,9 +77,48 @@ namespace Mariani_ElaborazioneCSV
                 s = reader.ReadLine();
                 i++;
             }
-
-            MessageBox.Show(lunghezzaMax.ToString());
+            return lunghezzaMax;
         }
+
+        private int[] Azione3Avanzato()
+        {
+            StreamReader reader = new StreamReader(fileName1);
+            string s = reader.ReadLine();
+            int[] lunghezzaMax = new int[Azione2()];
+            int asd = 0;
+            s = reader.ReadLine();
+
+            while (s != null)
+            {
+                string[] split = s.Split(';');
+                string[] array = new string[Azione2()];
+                
+                for (int i = 0; i < Azione2(); i++)
+                {
+                    reader.DiscardBufferedData();
+                    reader.BaseStream.Seek(0, System.IO.SeekOrigin.Begin);
+                    s = reader.ReadLine();
+                    
+                    while (s != null)
+                    {
+                        string[] stringaSplit = s.Split(';');
+                        if (asd != 0)
+                        {
+                            if (lunghezzaMax[i] < stringaSplit[i].Length)
+                            {
+                                lunghezzaMax[i] = stringaSplit[i].Length;
+                            }
+
+                        }
+                        s = reader.ReadLine();
+                        asd++;
+                    }
+                }
+            }
+
+            return lunghezzaMax;
+        }
+
         private void azione1_Click(object sender, EventArgs e)
         {
             Azione1();
@@ -91,12 +126,13 @@ namespace Mariani_ElaborazioneCSV
 
         private void azione2_Click(object sender, EventArgs e)
         {
-            Azione2();
+            MessageBox.Show("In un Record ci sono " + Azione2() + " Campi");
+            Azione3Avanzato();
         }
 
         private void azione3_Click(object sender, EventArgs e)
         {
-            Azione3();
+            MessageBox.Show("Il numero massimo di Caratteri in un record è " + Azione3().ToString());
         }
     }
 }
