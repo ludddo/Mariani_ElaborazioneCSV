@@ -98,7 +98,7 @@ namespace Mariani_ElaborazioneCSV
                     reader.DiscardBufferedData();
                     reader.BaseStream.Seek(0, System.IO.SeekOrigin.Begin);
                     s = reader.ReadLine();
-                    
+                    asd = 0;
                     while (s != null)
                     {
                         string[] stringaSplit = s.Split(';');
@@ -127,12 +127,37 @@ namespace Mariani_ElaborazioneCSV
         private void azione2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("In un Record ci sono " + Azione2() + " Campi");
-            Azione3Avanzato();
         }
 
         private void azione3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Il numero massimo di Caratteri in un record è " + Azione3().ToString());
+            groupBox1.Show();
+
+            int[] ints = new int[Azione2()];
+            int temp;
+            ints = Azione3Avanzato();
+
+            StreamWriter writer = new StreamWriter("temp.txt", append: false);
+            writer.WriteLine("In un Record ci sono massimo " + Azione3() + " caratteri\n");
+            for (int i = 0; i < Azione2(); i++)
+            {
+                temp = i + 1;
+                writer.WriteLine("Nel " + temp + " campo ci sono massimo " + ints[i] + " caratteri");
+            }
+            writer.Close();
+            StreamReader reader = new StreamReader("temp.txt");
+            string s = "";
+            while ((s = reader.ReadLine()) != null)
+            {
+                listView1.Items.Add(s);
+            }
+            reader.Close();
+        }
+
+        private void closeGroupBox1_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+            groupBox1.Hide();
         }
     }
 }
