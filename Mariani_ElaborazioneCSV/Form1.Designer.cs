@@ -36,7 +36,12 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.azione4 = new System.Windows.Forms.Button();
             this.azione5 = new System.Windows.Forms.Button();
+            this.azione6 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.closeGroupBox2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // azione1
@@ -71,8 +76,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.closeGroupBox1);
             this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.closeGroupBox1);
             this.groupBox1.Location = new System.Drawing.Point(346, 264);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(467, 264);
@@ -113,7 +118,7 @@
             // 
             // azione5
             // 
-            this.azione5.Location = new System.Drawing.Point(486, 61);
+            this.azione5.Location = new System.Drawing.Point(479, 62);
             this.azione5.Name = "azione5";
             this.azione5.Size = new System.Drawing.Size(75, 23);
             this.azione5.TabIndex = 5;
@@ -121,20 +126,65 @@
             this.azione5.UseVisualStyleBackColor = true;
             this.azione5.Click += new System.EventHandler(this.azione5_Click);
             // 
+            // azione6
+            // 
+            this.azione6.Location = new System.Drawing.Point(577, 61);
+            this.azione6.Name = "azione6";
+            this.azione6.Size = new System.Drawing.Size(75, 23);
+            this.azione6.TabIndex = 6;
+            this.azione6.Text = "Azione6";
+            this.azione6.UseVisualStyleBackColor = true;
+            this.azione6.Click += new System.EventHandler(this.azione6_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.closeGroupBox2);
+            this.groupBox2.Controls.Add(this.listView2);
+            this.groupBox2.Location = new System.Drawing.Point(346, 264);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(455, 251);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Visible = false;
+            // 
+            // listView2
+            // 
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(16, 19);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(432, 180);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.List;
+            // 
+            // closeGroupBox2
+            // 
+            this.closeGroupBox2.Location = new System.Drawing.Point(373, 205);
+            this.closeGroupBox2.Name = "closeGroupBox2";
+            this.closeGroupBox2.Size = new System.Drawing.Size(75, 23);
+            this.closeGroupBox2.TabIndex = 1;
+            this.closeGroupBox2.Text = "Chiudi";
+            this.closeGroupBox2.UseVisualStyleBackColor = true;
+            this.closeGroupBox2.Click += new System.EventHandler(this.closeGroupBox2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 527);
+            this.Controls.Add(this.azione6);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.azione5);
             this.Controls.Add(this.azione4);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.azione3);
             this.Controls.Add(this.azione2);
             this.Controls.Add(this.azione1);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -149,6 +199,10 @@
         private System.Windows.Forms.Button closeGroupBox1;
         private System.Windows.Forms.Button azione4;
         private System.Windows.Forms.Button azione5;
+        private System.Windows.Forms.Button azione6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button closeGroupBox2;
+        private System.Windows.Forms.ListView listView2;
     }
 }
 

@@ -33,6 +33,7 @@ namespace Mariani_ElaborazioneCSV
                 writer.WriteLine(s);
                 s = reader.ReadLine();
             }
+
             writer.WriteLine($"{anno};{regione};{t_femm};{t_masc};{t_both};{val_rand};{logico}".PadRight(70)+"#");
 
             writer.Close();

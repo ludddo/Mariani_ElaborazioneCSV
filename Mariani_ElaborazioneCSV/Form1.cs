@@ -152,6 +152,26 @@ namespace Mariani_ElaborazioneCSV
             File.Replace("temporaneo.csv", fileName1, "backup.csv");
         }
         
+        private void Azione6()
+        {
+            string s;
+            int i = 0;
+            StreamReader reader = new StreamReader("mariani1.csv");
+
+            s = reader.ReadLine();
+
+            while (s != null)
+            {
+                String[] split = s.Split(';');
+
+                listView2.Items.Add($"{split[0]};{split[1]};{split[4]}");
+
+                i++;
+                s = reader.ReadLine();
+            }
+
+            reader.Close();
+        }
 
         private void azione1_Click(object sender, EventArgs e)
         {
@@ -198,12 +218,23 @@ namespace Mariani_ElaborazioneCSV
             Form2 form2 = new Form2();
             form2.Show();
         }
+
+        private void azione6_Click(object sender, EventArgs e)
+        {
+            Azione6();
+            groupBox2.Show();
+        }
+
         private void closeGroupBox1_Click(object sender, EventArgs e)
         {
             listView1.Clear();
             groupBox1.Hide();
         }
 
-        
+        private void closeGroupBox2_Click(object sender, EventArgs e)
+        {
+            listView2.Clear();
+            groupBox2.Hide();
+        }
     }
 }
