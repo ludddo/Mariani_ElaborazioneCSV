@@ -35,6 +35,7 @@
             this.closeGroupBox1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.azione4 = new System.Windows.Forms.Button();
+            this.azione5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // 
             this.groupBox1.Controls.Add(this.closeGroupBox1);
             this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Location = new System.Drawing.Point(340, 194);
+            this.groupBox1.Location = new System.Drawing.Point(346, 264);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(467, 264);
             this.groupBox1.TabIndex = 3;
@@ -102,7 +103,7 @@
             // 
             // azione4
             // 
-            this.azione4.Location = new System.Drawing.Point(380, 61);
+            this.azione4.Location = new System.Drawing.Point(379, 62);
             this.azione4.Name = "azione4";
             this.azione4.Size = new System.Drawing.Size(75, 23);
             this.azione4.TabIndex = 4;
@@ -110,11 +111,22 @@
             this.azione4.UseVisualStyleBackColor = true;
             this.azione4.Click += new System.EventHandler(this.azione4_Click);
             // 
+            // azione5
+            // 
+            this.azione5.Location = new System.Drawing.Point(486, 61);
+            this.azione5.Name = "azione5";
+            this.azione5.Size = new System.Drawing.Size(75, 23);
+            this.azione5.TabIndex = 5;
+            this.azione5.Text = "Azione5";
+            this.azione5.UseVisualStyleBackColor = true;
+            this.azione5.Click += new System.EventHandler(this.azione5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(813, 527);
+            this.Controls.Add(this.azione5);
             this.Controls.Add(this.azione4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.azione3);
@@ -136,6 +148,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button closeGroupBox1;
         private System.Windows.Forms.Button azione4;
+        private System.Windows.Forms.Button azione5;
     }
 }
 

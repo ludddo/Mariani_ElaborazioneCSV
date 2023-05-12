@@ -15,6 +15,7 @@ namespace Mariani_ElaborazioneCSV
         public Form1()
         {
             InitializeComponent();
+            Azione1();
         }
 
         public string fileName1 = @"mariani1.csv";
@@ -77,6 +78,7 @@ namespace Mariani_ElaborazioneCSV
                 s = reader.ReadLine();
                 i++;
             }
+            reader.Close();
             return lunghezzaMax;
         }
 
@@ -115,7 +117,7 @@ namespace Mariani_ElaborazioneCSV
                     }
                 }
             }
-
+            reader.Close();
             return lunghezzaMax;
         }
 
@@ -191,6 +193,11 @@ namespace Mariani_ElaborazioneCSV
             Azione4();
         }
 
+        private void azione5_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
         private void closeGroupBox1_Click(object sender, EventArgs e)
         {
             listView1.Clear();
