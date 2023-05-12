@@ -32,8 +32,9 @@
             this.azione2 = new System.Windows.Forms.Button();
             this.azione3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.closeGroupBox1 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.azione4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,16 +80,6 @@
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Visible = false;
             // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 20);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(432, 193);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
-            // 
             // closeGroupBox1
             // 
             this.closeGroupBox1.Location = new System.Drawing.Point(373, 219);
@@ -99,11 +90,32 @@
             this.closeGroupBox1.UseVisualStyleBackColor = true;
             this.closeGroupBox1.Click += new System.EventHandler(this.closeGroupBox1_Click);
             // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(16, 20);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(432, 193);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            // 
+            // azione4
+            // 
+            this.azione4.Location = new System.Drawing.Point(380, 61);
+            this.azione4.Name = "azione4";
+            this.azione4.Size = new System.Drawing.Size(75, 23);
+            this.azione4.TabIndex = 4;
+            this.azione4.Text = "Azione4";
+            this.azione4.UseVisualStyleBackColor = true;
+            this.azione4.Click += new System.EventHandler(this.azione4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.azione4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.azione3);
             this.Controls.Add(this.azione2);
@@ -123,6 +135,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button closeGroupBox1;
+        private System.Windows.Forms.Button azione4;
     }
 }
 

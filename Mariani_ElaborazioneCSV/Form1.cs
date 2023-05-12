@@ -119,6 +119,38 @@ namespace Mariani_ElaborazioneCSV
             return lunghezzaMax;
         }
 
+        private void Azione4()
+        {
+            string s;
+            int i = 0;
+            StreamReader reader = new StreamReader(fileName1);
+            StreamWriter writer = new StreamWriter("temporaneo.csv");
+
+            s = reader.ReadLine();
+            while (s != null)
+            {
+                if (i != 0)
+                {
+                    writer.WriteLine(s.PadRight(70) + "#");
+                }
+                else
+                {
+                    writer.WriteLine(s);
+                }
+
+                s = reader.ReadLine();
+                i++;
+            }
+
+            
+
+            reader.Close();
+            writer.Close();
+
+            File.Replace("temporaneo.csv", fileName1, "backup.csv");
+        }
+        
+
         private void azione1_Click(object sender, EventArgs e)
         {
             Azione1();
@@ -154,10 +186,17 @@ namespace Mariani_ElaborazioneCSV
             reader.Close();
         }
 
+        private void azione4_Click(object sender, EventArgs e)
+        {
+            Azione4();
+        }
+
         private void closeGroupBox1_Click(object sender, EventArgs e)
         {
             listView1.Clear();
             groupBox1.Hide();
         }
+
+        
     }
 }
