@@ -186,7 +186,7 @@ namespace Mariani_ElaborazioneCSV
         private void azione3_Click(object sender, EventArgs e)
         {
             groupBox1.Show();
-
+            listView1.Clear();
             int[] ints = new int[Azione2()];
             int temp;
             ints = Azione3Avanzato();
