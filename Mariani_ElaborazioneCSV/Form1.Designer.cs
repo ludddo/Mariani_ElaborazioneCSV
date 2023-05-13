@@ -1,4 +1,4 @@
-﻿namespace Mariani_ElaborazioneCSV
+namespace Mariani_ElaborazioneCSV
 {
     partial class Form1
     {
@@ -56,7 +56,7 @@
             // 
             // azione2
             // 
-            this.azione2.Location = new System.Drawing.Point(167, 62);
+            this.azione2.Location = new System.Drawing.Point(148, 62);
             this.azione2.Name = "azione2";
             this.azione2.Size = new System.Drawing.Size(75, 23);
             this.azione2.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             // azione3
             // 
-            this.azione3.Location = new System.Drawing.Point(275, 62);
+            this.azione3.Location = new System.Drawing.Point(229, 62);
             this.azione3.Name = "azione3";
             this.azione3.Size = new System.Drawing.Size(75, 23);
             this.azione3.TabIndex = 2;
@@ -80,10 +80,10 @@
             this.groupBox1.Controls.Add(this.closeGroupBox1);
             this.groupBox1.Location = new System.Drawing.Point(346, 264);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(467, 264);
+            this.groupBox1.Size = new System.Drawing.Size(467, 244);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Azione3";
             this.groupBox1.Visible = false;
             // 
             // closeGroupBox1
