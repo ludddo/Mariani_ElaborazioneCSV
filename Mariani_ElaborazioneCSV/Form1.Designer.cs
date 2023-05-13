@@ -40,6 +40,7 @@ namespace Mariani_ElaborazioneCSV
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.closeGroupBox2 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.aiuto1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -168,11 +169,23 @@ namespace Mariani_ElaborazioneCSV
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.List;
             // 
+            // aiuto1
+            // 
+            this.aiuto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aiuto1.Location = new System.Drawing.Point(716, 13);
+            this.aiuto1.Name = "aiuto1";
+            this.aiuto1.Size = new System.Drawing.Size(39, 38);
+            this.aiuto1.TabIndex = 7;
+            this.aiuto1.Text = "?";
+            this.aiuto1.UseVisualStyleBackColor = true;
+            this.aiuto1.Click += new System.EventHandler(this.aiuto1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 365);
+            this.Controls.Add(this.aiuto1);
             this.Controls.Add(this.azione6);
             this.Controls.Add(this.azione5);
             this.Controls.Add(this.azione3);
@@ -203,6 +216,7 @@ namespace Mariani_ElaborazioneCSV
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button closeGroupBox2;
         private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Button aiuto1;
     }
 }
 

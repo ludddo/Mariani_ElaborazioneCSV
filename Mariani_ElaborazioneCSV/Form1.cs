@@ -180,7 +180,8 @@ namespace Mariani_ElaborazioneCSV
 
         private void azione2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("In un Record ci sono " + Azione2() + " Campi");
+            MessageBoxIcon icon = MessageBoxIcon.Information;
+            MessageBox.Show("In un Record ci sono " + Azione2() + " Campi", "Azione 2", MessageBoxButtons.OK, icon);
         }
 
         private void azione3_Click(object sender, EventArgs e)
@@ -235,6 +236,12 @@ namespace Mariani_ElaborazioneCSV
         {
             listView2.Clear();
             groupBox2.Hide();
+        }
+
+        private void aiuto1_Click(object sender, EventArgs e)
+        {
+            MessageBoxIcon icon = MessageBoxIcon.Question;
+            MessageBox.Show("Azione 1: Aggiungere, in coda ad ogni record, un campo chiamato \"miovalore\", contenente un numero casuale compreso tra 10<=X<=20 ed un campo per marcare la cancellazione logica;\n\nAzione 2: contare il numero dei campi che compongono il record;\n\nAzione 3: calcolare la lunghezza massima dei record presenti indicando anche la lunghezza massima di ogni campo;\n\nAzione 4: inserire in ogni record un numero di spazi necessari a rendere fissa la dimensione di tutti i record, senza perdere informazioni;\n\nAzione 5: Aggiungere un record in coda;\n\nAzione 6: Visualizzare dei dati mostrando tre campi significativi;", "Aiuto", MessageBoxButtons.OK, icon);
         }
     }
 }
