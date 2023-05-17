@@ -27,24 +27,34 @@ namespace Mariani_ElaborazioneCSV
             string s;
             int i = 0;
             StreamWriter writer = new StreamWriter(fileName1, append: false);
-            StreamReader reader = new StreamReader(fileName2);
-            s = reader.ReadLine();
-            while (s != null)
+            
+            
+            if (File.Exists(fileName2))
             {
-                if (i == 0)
-                {
-                    writer.WriteLine(s + ";Valore Randomico;Campo Cancellazione Logica");
-                }
-                else
-                {
-                    int valore = r.Next(10, 21);
-                    writer.WriteLine(s + ";" + valore + ";false");
-                }
-                i++;
+                StreamReader reader = new StreamReader(fileName2);
                 s = reader.ReadLine();
+                while (s != null)
+                {
+                    if (i == 0)
+                    {
+                        writer.WriteLine(s + ";Valore Randomico;Campo Cancellazione Logica;Campo Univoco" );
+                    }
+                    else
+                    {
+                        int valore = r.Next(10, 21);
+                        writer.WriteLine(s + ";" + valore + ";false;" + i);
+                    }
+                    i++;
+                    s = reader.ReadLine();
+                }
+                reader.Close();
+            }
+            else
+            {
+                MessageBox.Show("Caricare il file csv in bin/debug");
             }
             writer.Close();
-            reader.Close();
+            
         }
 
         private int Azione2() 
@@ -173,6 +183,32 @@ namespace Mariani_ElaborazioneCSV
             reader.Close();
         }
 
+        private int Azione7(string parola)
+        {
+            StreamReader reader = new StreamReader(fileName1);
+            string s;
+            int i = 0;
+            s = reader.ReadLine();
+            while (s != null)
+            {
+
+                String[] split = s.Split(';');
+                String[] split1 = split[Azione2()-1].Split(' ');
+
+                if (split1[0] == parola)
+                {
+                    reader.Close();
+                    return i;
+                }
+
+                i++;
+                s = reader.ReadLine();
+
+            }
+            reader.Close();
+            return -1;
+        }
+
         private void azione1_Click(object sender, EventArgs e)
         {
             Azione1();
@@ -224,6 +260,28 @@ namespace Mariani_ElaborazioneCSV
         {
             Azione6();
             groupBox2.Show();
+        
+        }
+
+        private void azione_7_Click(object sender, EventArgs e)
+        {
+            groupBox3.Show();
+        }
+
+        private void azione7_invia_Click(object sender, EventArgs e)
+        {
+            int linea = Azione7(textBox1.Text);
+            groupBox3.Hide();
+            if (linea != -1)
+            {
+                MessageBox.Show("La tua ricerca è stata individuata nella riga " + linea);
+            }
+            else
+            {
+                MessageBox.Show("La tua ricerca non ha avuto risultati");
+            }
+           
+            
         }
 
         private void closeGroupBox1_Click(object sender, EventArgs e)
@@ -243,5 +301,7 @@ namespace Mariani_ElaborazioneCSV
             MessageBoxIcon icon = MessageBoxIcon.Question;
             MessageBox.Show("Azione 1: Aggiungere, in coda ad ogni record, un campo chiamato \"miovalore\", contenente un numero casuale compreso tra 10<=X<=20 ed un campo per marcare la cancellazione logica;\n\nAzione 2: contare il numero dei campi che compongono il record;\n\nAzione 3: calcolare la lunghezza massima dei record presenti indicando anche la lunghezza massima di ogni campo;\n\nAzione 4: inserire in ogni record un numero di spazi necessari a rendere fissa la dimensione di tutti i record, senza perdere informazioni;\n\nAzione 5: Aggiungere un record in coda;\n\nAzione 6: Visualizzare dei dati mostrando tre campi significativi;", "Aiuto", MessageBoxButtons.OK, icon);
         }
+
+        
     }
 }

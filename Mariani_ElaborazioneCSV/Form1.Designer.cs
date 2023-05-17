@@ -41,13 +41,19 @@ namespace Mariani_ElaborazioneCSV
             this.closeGroupBox2 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
             this.aiuto1 = new System.Windows.Forms.Button();
+            this.azione_7 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.azione7_invia = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // azione1
             // 
-            this.azione1.Location = new System.Drawing.Point(137, 62);
+            this.azione1.Location = new System.Drawing.Point(59, 62);
             this.azione1.Name = "azione1";
             this.azione1.Size = new System.Drawing.Size(75, 23);
             this.azione1.TabIndex = 0;
@@ -57,7 +63,7 @@ namespace Mariani_ElaborazioneCSV
             // 
             // azione2
             // 
-            this.azione2.Location = new System.Drawing.Point(218, 62);
+            this.azione2.Location = new System.Drawing.Point(140, 62);
             this.azione2.Name = "azione2";
             this.azione2.Size = new System.Drawing.Size(75, 23);
             this.azione2.TabIndex = 1;
@@ -67,7 +73,7 @@ namespace Mariani_ElaborazioneCSV
             // 
             // azione3
             // 
-            this.azione3.Location = new System.Drawing.Point(299, 62);
+            this.azione3.Location = new System.Drawing.Point(221, 62);
             this.azione3.Name = "azione3";
             this.azione3.Size = new System.Drawing.Size(75, 23);
             this.azione3.TabIndex = 2;
@@ -109,7 +115,7 @@ namespace Mariani_ElaborazioneCSV
             // 
             // azione4
             // 
-            this.azione4.Location = new System.Drawing.Point(389, 62);
+            this.azione4.Location = new System.Drawing.Point(302, 62);
             this.azione4.Name = "azione4";
             this.azione4.Size = new System.Drawing.Size(75, 23);
             this.azione4.TabIndex = 4;
@@ -119,7 +125,7 @@ namespace Mariani_ElaborazioneCSV
             // 
             // azione5
             // 
-            this.azione5.Location = new System.Drawing.Point(470, 62);
+            this.azione5.Location = new System.Drawing.Point(383, 62);
             this.azione5.Name = "azione5";
             this.azione5.Size = new System.Drawing.Size(75, 23);
             this.azione5.TabIndex = 5;
@@ -129,7 +135,7 @@ namespace Mariani_ElaborazioneCSV
             // 
             // azione6
             // 
-            this.azione6.Location = new System.Drawing.Point(551, 62);
+            this.azione6.Location = new System.Drawing.Point(464, 62);
             this.azione6.Name = "azione6";
             this.azione6.Size = new System.Drawing.Size(75, 23);
             this.azione6.TabIndex = 6;
@@ -180,11 +186,62 @@ namespace Mariani_ElaborazioneCSV
             this.aiuto1.UseVisualStyleBackColor = true;
             this.aiuto1.Click += new System.EventHandler(this.aiuto1_Click);
             // 
+            // azione_7
+            // 
+            this.azione_7.Location = new System.Drawing.Point(545, 62);
+            this.azione_7.Name = "azione_7";
+            this.azione_7.Size = new System.Drawing.Size(75, 23);
+            this.azione_7.TabIndex = 8;
+            this.azione_7.Text = "Azione7";
+            this.azione_7.UseVisualStyleBackColor = true;
+            this.azione_7.Click += new System.EventHandler(this.azione_7_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.azione7_invia);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Location = new System.Drawing.Point(73, 192);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(156, 98);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Azione7";
+            this.groupBox3.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(37, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ricerca";
+            // 
+            // azione7_invia
+            // 
+            this.azione7_invia.Location = new System.Drawing.Point(47, 58);
+            this.azione7_invia.Name = "azione7_invia";
+            this.azione7_invia.Size = new System.Drawing.Size(75, 23);
+            this.azione7_invia.TabIndex = 2;
+            this.azione7_invia.Text = "Invia";
+            this.azione7_invia.UseVisualStyleBackColor = true;
+            this.azione7_invia.Click += new System.EventHandler(this.azione7_invia_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 365);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.azione_7);
             this.Controls.Add(this.aiuto1);
             this.Controls.Add(this.azione6);
             this.Controls.Add(this.azione5);
@@ -198,6 +255,8 @@ namespace Mariani_ElaborazioneCSV
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -217,6 +276,11 @@ namespace Mariani_ElaborazioneCSV
         private System.Windows.Forms.Button closeGroupBox2;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button aiuto1;
+        private System.Windows.Forms.Button azione_7;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button azione7_invia;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
