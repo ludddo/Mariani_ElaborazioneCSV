@@ -51,6 +51,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -58,6 +59,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -65,6 +67,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 2;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -72,6 +75,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 3;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
@@ -79,6 +83,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 4;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
@@ -86,6 +91,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 5;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox7
             // 
@@ -93,6 +99,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 6;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label1
             // 
@@ -102,6 +109,7 @@
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Anno";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -111,6 +119,7 @@
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Regione";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -120,6 +129,7 @@
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Tasso Femmine";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -129,6 +139,7 @@
             this.label4.Size = new System.Drawing.Size(73, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Tasso Maschi";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -138,6 +149,7 @@
             this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "% Maschi e Femmine";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -147,6 +159,7 @@
             this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Valore Rand";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -156,6 +169,7 @@
             this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Canc Logica";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // button1
             // 

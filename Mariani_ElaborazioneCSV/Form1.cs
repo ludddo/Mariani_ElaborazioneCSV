@@ -284,6 +284,12 @@ namespace Mariani_ElaborazioneCSV
             
         }
 
+        private void azione8_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
+
         private void closeGroupBox1_Click(object sender, EventArgs e)
         {
             listView1.Clear();
