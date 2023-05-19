@@ -74,7 +74,7 @@ namespace Mariani_ElaborazioneCSV
 
                     if (rigaAttuale == linea)
                     {
-                        s = $"{anno};{regione};{t_femm};{t_masc};{t_both};{val_rand};{logico};{linea}";
+                        s = $"{anno};{regione};{t_femm};{t_masc};{t_both};{val_rand};{logico};{linea}".PadRight(70);
                         writer.WriteLine(s);
                     }
                     else
@@ -93,6 +93,8 @@ namespace Mariani_ElaborazioneCSV
 
             writer.Close();
             reader.Close();
+
+            File.Replace("appoggio.csv", "mariani1.csv", "backup.csv");
         }
 
         private void button1_Click(object sender, EventArgs e)

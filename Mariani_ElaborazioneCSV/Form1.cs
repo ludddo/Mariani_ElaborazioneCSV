@@ -143,7 +143,7 @@ namespace Mariani_ElaborazioneCSV
             {
                 if (i != 0)
                 {
-                    writer.WriteLine(s.PadRight(70) + "#");
+                    writer.WriteLine(s.PadRight(70));
                 }
                 else
                 {
