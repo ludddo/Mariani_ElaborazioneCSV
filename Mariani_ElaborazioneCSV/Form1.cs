@@ -209,6 +209,43 @@ namespace Mariani_ElaborazioneCSV
             return -1;
         }
 
+        private void Azione9(string ricerca)
+        {
+            int riga = Azione7(ricerca);
+            int i = 0;
+            StreamReader reader = new StreamReader(fileName1);
+            StreamWriter writer = new StreamWriter("temporaneo.csv");
+
+
+            string s = reader.ReadLine();
+            while (s != null)
+            {
+                String[] split = s.Split(';');
+                String[] split1= split[7].Split(' ');
+
+
+                if (split1[0] == riga.ToString())
+                {
+                    
+
+                    writer.WriteLine($"{split[0]};{split[1]};{split[2]};{split[3]};{split[4]};{split[5]};true;{split[7]}");
+
+                }
+                else
+                {
+                    writer.WriteLine(s);
+                }
+                
+                i++;
+                s = reader.ReadLine();
+            }
+
+            writer.Close();
+            reader.Close();
+
+            File.Replace("temporaneo.csv", fileName1, "backup.csv");
+        }
+
         private void azione1_Click(object sender, EventArgs e)
         {
             Azione1();
@@ -288,6 +325,17 @@ namespace Mariani_ElaborazioneCSV
         {
             Form3 form3 = new Form3();
             form3.Show();
+        }
+
+        private void azione9_Click(object sender, EventArgs e)
+        {
+            groupBox3.Show();
+        }
+
+        private void azioneInvia9_Click(object sender, EventArgs e)
+        {
+            Azione9(textBox2.Text);
+            groupBox3.Hide();
         }
 
         private void closeGroupBox1_Click(object sender, EventArgs e)
