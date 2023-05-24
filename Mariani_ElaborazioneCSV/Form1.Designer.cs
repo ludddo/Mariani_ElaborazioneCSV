@@ -320,7 +320,7 @@ namespace Mariani_ElaborazioneCSV
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Elaborazione CSV";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

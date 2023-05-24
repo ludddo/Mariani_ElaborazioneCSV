@@ -203,7 +203,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Elaborazione CSV";
             this.ResumeLayout(false);
             this.PerformLayout();
 
