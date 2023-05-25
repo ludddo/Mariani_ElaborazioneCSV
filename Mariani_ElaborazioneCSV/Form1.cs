@@ -211,7 +211,7 @@ namespace Mariani_ElaborazioneCSV
             return -1;
         }
 
-        private void Azione9(string ricerca)
+        private int Azione9(string ricerca)
         {
             int riga = Azione7(ricerca);
             int i = 0;
@@ -231,26 +231,31 @@ namespace Mariani_ElaborazioneCSV
                     
 
                     writer.WriteLine($"{split[0]};{split[1]};{split[2]};{split[3]};{split[4]};{split[5]};true;{split[7]}");
-
+                    return 1;
                 }
                 else
                 {
                     writer.WriteLine(s);
+                    return -1;
                 }
                 
                 i++;
                 s = reader.ReadLine();
             }
 
+
             writer.Close();
             reader.Close();
 
             File.Replace("temporaneo.csv", fileName1, "backup.csv");
+
+            return 0;
         }
 
         private void azione1_Click(object sender, EventArgs e)
         {
             Azione1();
+            MessageBox.Show("Azione eseguita correttamente", "Informazione", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void azione2_Click(object sender, EventArgs e)
@@ -282,11 +287,13 @@ namespace Mariani_ElaborazioneCSV
                 listView1.Items.Add(s);
             }
             reader.Close();
+            
         }
 
         private void azione4_Click(object sender, EventArgs e)
         {
             Azione4();
+            MessageBox.Show("Azione eseguita correttamente", "Informazione", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void azione5_Click(object sender, EventArgs e)
@@ -299,12 +306,12 @@ namespace Mariani_ElaborazioneCSV
         {
             Azione6();
             groupBox2.Show();
-        
         }
 
         private void azione_7_Click(object sender, EventArgs e)
         {
             groupBox3.Show();
+
         }
 
         private void azione7_invia_Click(object sender, EventArgs e)
@@ -313,14 +320,14 @@ namespace Mariani_ElaborazioneCSV
             groupBox3.Hide();
             if (linea != -1)
             {
-                MessageBox.Show("La tua ricerca è stata individuata nella riga " + linea);
+                MessageBox.Show("La tua ricerca è stata individuata nella riga " + linea, "Informazione", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("La tua ricerca non ha avuto risultati");
+                MessageBox.Show("La tua ricerca non ha avuto risultati", "Informazione", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-           
             
+
         }
 
         private void azione8_Click(object sender, EventArgs e)
@@ -331,13 +338,25 @@ namespace Mariani_ElaborazioneCSV
 
         private void azione9_Click(object sender, EventArgs e)
         {
-            groupBox3.Show();
+            groupBox4.Show(); 
         }
 
         private void azioneInvia9_Click(object sender, EventArgs e)
         {
-            Azione9(textBox2.Text);
-            groupBox3.Hide();
+            int successo = Azione9(textBox2.Text);
+            groupBox4.Hide();
+            if (successo == 1)
+            {
+                MessageBox.Show("La tua ricerca è stata individuata e cancellata", "Informazione", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (successo == -1)
+            {
+                MessageBox.Show("La tua ricerca non ha avuto risultati", "Informazione", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Errore", "Informazione", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void closeGroupBox1_Click(object sender, EventArgs e)

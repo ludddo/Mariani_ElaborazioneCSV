@@ -55,7 +55,7 @@ namespace Mariani_ElaborazioneCSV
 
         }
 
-        private void Azione8(string anno, string regione, float t_femm, float t_masc, float t_both, int val_rand, bool logico, int linea)
+        private void Azione8(int anno, string regione, float t_femm, float t_masc, float t_both, int val_rand, string logico, int linea)
         {
             StreamReader reader = new StreamReader("mariani1.csv");
             StreamWriter writer = new StreamWriter("appoggio.csv");
@@ -99,16 +99,40 @@ namespace Mariani_ElaborazioneCSV
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string anno = textBox1.Text;
-            string regione = textBox2.Text;
-            float t_femm = float.Parse(textBox3.Text);
-            float t_masc = float.Parse(textBox4.Text);
-            float t_both = float.Parse(textBox5.Text);
-            int val_rand = int.Parse(textBox6.Text);
-            bool logico = bool.Parse(textBox7.Text);
+            string logicoString;
+
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox5.Text) || string.IsNullOrWhiteSpace(textBox6.Text) || string.IsNullOrWhiteSpace(textBox7.Text))
+            {
+                // Message Box with title and icon
+                MessageBox.Show("Assicurati che tutti i campi siano riempiti", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             
-            int riga = Ricerca(textBox8.Text);
-            Azione8(anno, regione, t_femm, t_masc, t_both, val_rand, logico, riga);
+            bool isAnnoValid = int.TryParse(textBox1.Text, out int anno);
+            bool isTfemmValid = float.TryParse(textBox3.Text, out float t_femm);
+            bool isTmascValid = float.TryParse(textBox4.Text, out float t_masc);
+            bool isTbothValid = float.TryParse(textBox5.Text, out float t_both);
+            bool isValRandValid = int.TryParse(textBox6.Text, out int val_rand);
+            bool isLogicoValid = bool.TryParse(textBox7.Text, out bool logico);
+            bool isRigavalid = int.TryParse(textBox8.Text, out int riga);
+
+            if (isAnnoValid && isTfemmValid && isTmascValid && isTbothValid && isValRandValid && isLogicoValid)
+            {
+                if (logico == false)
+                    logicoString = "false";
+                else
+                    logicoString = "true";
+
+                string regione = textBox2.Text;
+                int rigaAsd = Ricerca(riga.ToString());
+                Azione8(anno, regione, t_femm, t_masc, t_both, val_rand, logicoString, riga);
+                // Message Box with title and icon
+                MessageBox.Show("Azione eseguita correttamente", "Informazione", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Assicurati che tutti i dati in input siano nel formato corretto", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
