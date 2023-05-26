@@ -374,9 +374,47 @@ namespace Mariani_ElaborazioneCSV
         private void aiuto1_Click(object sender, EventArgs e)
         {
             MessageBoxIcon icon = MessageBoxIcon.Question;
-            MessageBox.Show("Azione 1: Aggiungere, in coda ad ogni record, un campo chiamato \"miovalore\", contenente un numero casuale compreso tra 10<=X<=20 ed un campo per marcare la cancellazione logica;\n\nAzione 2: contare il numero dei campi che compongono il record;\n\nAzione 3: calcolare la lunghezza massima dei record presenti indicando anche la lunghezza massima di ogni campo;\n\nAzione 4: inserire in ogni record un numero di spazi necessari a rendere fissa la dimensione di tutti i record, senza perdere informazioni;\n\nAzione 5: Aggiungere un record in coda;\n\nAzione 6: Visualizzare dei dati mostrando tre campi significativi;\n\nAzione 7: Ricercare un record per campo chiave a scelta;\n\nAzione 8: Modificare  un record;\n\nAzione 9: Cancellare logicamente un record;", "Aiuto", MessageBoxButtons.OK, icon);
+            MessageBox.Show("Start: Aggiungere, in coda ad ogni record, un campo chiamato \"miovalore\", contenente un numero casuale compreso tra 10<=X<=20 ed un campo per marcare la cancellazione logica;\n\nConta Campi: contare il numero dei campi che compongono il record;\n\nMax Length: calcolare la lunghezza massima dei record presenti indicando anche la lunghezza massima di ogni campo;\n\nDim Fissa: inserire in ogni record un numero di spazi necessari a rendere fissa la dimensione di tutti i record, senza perdere informazioni;\n\nAggiunta: Aggiungere un record in coda;\n\nVisualizza: Visualizzare dei dati mostrando tre campi significativi;\n\nRicerca: Ricercare un record per campo chiave a scelta;\n\nModifica: Modificare  un record;\n\nCancella: Cancellare logicamente un record;", "Aiuto", MessageBoxButtons.OK, icon);
         }
 
-        
+        private void aggiuntaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            azione5_Click(sender, e);
+        }
+
+        private void modificaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            azione8_Click(sender, e);
+        }
+
+        private void cancellazioneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            azione9_Click(sender, e);
+        }
+
+        private void mioValoreECampoCancellazioneLogicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            azione1_Click(sender, e);
+        }
+
+        private void dimensioneFissaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            azione4_Click(sender, e);
+        }
+
+        private void conteggioCampiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            azione2_Click(sender, e);
+        }
+
+        private void lunghezzaMassimaRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            azione3_Click(sender, e);
+        }
+
+        private void ricercaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            azione7_invia_Click(sender, e);
+        }
     }
 }
