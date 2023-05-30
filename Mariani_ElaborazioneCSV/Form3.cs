@@ -97,6 +97,7 @@ namespace Mariani_ElaborazioneCSV
             File.Replace("appoggio.csv", "mariani1.csv", "backup.csv");
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             string logicoString;

@@ -22,25 +22,23 @@ namespace Mariani_ElaborazioneCSV
 
         private void Azione5(string anno, string regione, float t_femm, float t_masc, float t_both, int val_rand, string logico)
         {
-            string s;
             int i = 0;
             StreamReader reader = new StreamReader("mariani1.csv");
-            StreamWriter writer = new StreamWriter("temporaneo.csv");
-
-            s = reader.ReadLine();
-            while (s != null)
+            string line = reader.ReadLine();
+            while(line != null)
             {
-                writer.WriteLine(s);
-                s = reader.ReadLine();
                 i++;
+                line = reader.ReadLine();
             }
-
-            writer.WriteLine($"{anno};{regione};{t_femm};{t_masc};{t_both};{val_rand};{logico};{i}");
+            reader.Close();
+            var oStream = new FileStream("mariani1.csv", FileMode.Append, FileAccess.Write, FileShare.Read);
+            BinaryWriter writer = new BinaryWriter(oStream);
+            string linea = $"{anno};{regione};{t_femm};{t_masc};{t_both};{val_rand};{logico};{i}";
+            byte[] data = Encoding.ASCII.GetBytes(linea);
+            writer.Write(data);
 
             writer.Close();
-            reader.Close();
-
-            File.Replace("temporaneo.csv", "mariani1.csv", "backup.csv");
+            oStream.Close();
         }
         private void button1_Click(object sender, EventArgs e)
         {
