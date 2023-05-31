@@ -60,7 +60,7 @@ namespace Mariani_ElaborazioneCSV
         private int Azione2() 
         {
             string s;
-            int count = 0;
+            int count;
             StreamReader reader = new StreamReader(fileName1);
             s = reader.ReadLine();
             reader.Close();
@@ -215,6 +215,7 @@ namespace Mariani_ElaborazioneCSV
         {
             int riga = Azione7(ricerca);
             int i = 0;
+            int successo = 0;
             StreamReader reader = new StreamReader(fileName1);
             StreamWriter writer = new StreamWriter("temporaneo.csv");
 
@@ -231,12 +232,13 @@ namespace Mariani_ElaborazioneCSV
                     
 
                     writer.WriteLine($"{split[0]};{split[1]};{split[2]};{split[3]};{split[4]};{split[5]};true;{split[7]}");
-                    return 1;
+                    successo = 1;
+                    break;
                 }
                 else
                 {
                     writer.WriteLine(s);
-                    return -1;
+                    successo = -1;
                 }
                 
                 i++;
@@ -249,7 +251,7 @@ namespace Mariani_ElaborazioneCSV
 
             File.Replace("temporaneo.csv", fileName1, "backup.csv");
 
-            return 0;
+            return successo;
         }
 
         private void azione1_Click(object sender, EventArgs e)
