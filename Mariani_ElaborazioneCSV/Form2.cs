@@ -22,6 +22,7 @@ namespace Mariani_ElaborazioneCSV
 
         private void Azione5(string anno, string regione, float t_femm, float t_masc, float t_both, int val_rand, string logico)
         {
+            //
             int i = 0;
             StreamReader reader = new StreamReader("mariani1.csv");
             string line = reader.ReadLine();
